@@ -1,0 +1,19 @@
+[Unit]
+Description=Book Manager and Automation.
+
+[Container]
+AutoUpdate=registry
+ContainerName=readarr
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ={{ readarr_timezone }}
+Image=lscr.io/linuxserver/readarr:develop
+PublishPort={{ readarr_web_port }}:8787
+Volume={{ readarr_config_path }}:/config
+Volume={{ readarr_data_path }}:/data
+
+[Service]
+Restart=unless-stopped
+
+[Install]
+WantedBy=multi-user.target
