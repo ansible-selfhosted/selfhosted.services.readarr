@@ -7,7 +7,7 @@ ContainerName=readarr
 Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ={{ readarr_timezone }}
-Image=lscr.io/linuxserver/readarr:develop
+Image=lscr.io/linuxserver/readarr:{{ readarr_version }}
 PublishPort={{ readarr_web_port }}:8787
 Volume={{ readarr_config_path }}:/config
 Volume={{ readarr_data_path }}:/data

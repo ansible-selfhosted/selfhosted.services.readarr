@@ -2,4 +2,5 @@
 readarr_config_path: ~/.config/readarr/
 readarr_data_path: ~/.local/share/containers/storage/media
 readarr_timezone: Etc/UTC
+readarr_version: develop
 readarr_web_port: 8787

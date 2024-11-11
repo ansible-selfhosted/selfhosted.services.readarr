@@ -19,11 +19,12 @@ A role to deploy Readarr using rootless Podman with systemd.
 
 ## Role Arguments
 
-|Option|Description|Type|Required|Default|
-|---|---|---|---|---|
+|Option|Description|Type|Required|Default|choices|
+|---|---|---|---|---|---|
 |readarr_config_path|The path to the readarr configuration directory|str|False|~/.config/readarr/|
 |readarr_data_path|The path to the readarr data directory<br>It is recommended to share the same data directory with other media managing services|str|False|~/.local/share/containers/storage/media|
 |readarr_timezone|The timezone for the readarr service|str|False|Etc/UTC|
+|readarr_version|The version of the readarr service<br>There is currently no stable version available|str|False|develop|- develop<br>- nightly
 |readarr_web_port|The port for the web server|int|False|8787|
 
 

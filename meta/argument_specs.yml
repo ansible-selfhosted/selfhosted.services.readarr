@@ -28,6 +28,16 @@ argument_specs:
         default: Etc/UTC
         description:
           - The timezone for the readarr service
+      readarr_version:
+        type: str
+        required: false
+        default: develop
+        description:
+          - The version of the readarr service
+          - There is currently no stable version available
+        choices:
+          - develop
+          - nightly
       readarr_web_port:
         type: int
         required: false
