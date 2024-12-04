@@ -16,7 +16,6 @@
     path: "{{ item }}"
     state: directory
     mode: "0750"
-    recurse: true
   loop:
     - "{{ readarr_config_path }}"
     - "{{ readarr_data_path }}"
