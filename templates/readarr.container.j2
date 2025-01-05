@@ -4,13 +4,18 @@ Description=Book Manager and Automation.
 [Container]
 AutoUpdate=registry
 ContainerName=readarr
-Environment=PUID=1000
-Environment=PGID=1000
+Environment=PUID={{ readarr_puid }}
+Environment=PGID={{ readarr_pgid }}
 Environment=TZ={{ readarr_timezone }}
 Image=lscr.io/linuxserver/readarr:{{ readarr_version }}
 PublishPort={{ readarr_web_port }}:8787
-Volume={{ readarr_config_path }}:/config:Z
-Volume={{ readarr_data_path }}:/data:z
+Volume={{ readarr_config_path }}:/config{% if readarr_config_label|length > 0 %}:{{ readarr_config_label }}{% endif %}
+
+Volume={{ readarr_data_path }}:/data{% if readarr_data_label|length > 0 %}:{{ readarr_data_label }}{% endif %}
+
+{% for readarr_var in readarr_additional_options %}
+{{ readarr_var }}
+{% endfor %}
 
 [Service]
 Restart=always

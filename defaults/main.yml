@@ -1,6 +1,11 @@
 ---
+readarr_additional_options: []
+readarr_config_label: ''
 readarr_config_path: ~/.config/readarr/
+readarr_data_label: ''
 readarr_data_path: ~/.local/share/containers/storage/media
+readarr_puid: 1000
+readarr_pgid: 1000
 readarr_timezone: Etc/UTC
 readarr_version: develop
 readarr_web_port: 8787

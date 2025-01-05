@@ -9,12 +9,34 @@ argument_specs:
     author:
       - SpeakinTelnet
     options:
+      readarr_additional_options:
+        type: list
+        required: false
+        default: []
+        description:
+          - List of additional key=value for the quadlet container
+          - 'ex: - "Network=custom.network"'
+          - Can also be used to leave comments by preceding with a '#'
+      readarr_config_label:
+        type: str
+        required: false
+        default: ""
+        description:
+          - The labels for to the readarr config directory
+          - "Comma separated values (ex: rw,Z)"
       readarr_config_path:
         type: str
         required: false
         default: ~/.config/readarr/
         description:
           - The path to the readarr configuration directory
+      readarr_data_label:
+        type: str
+        required: false
+        default: ""
+        description:
+          - The labels for to the readarr data directory
+          - "Comma separated values (ex: rw,Z)"
       readarr_data_path:
         type: str
         required: false
@@ -22,6 +44,18 @@ argument_specs:
         description:
           - The path to the readarr data directory
           - It is recommended to share the same data directory with other media managing services
+      readarr_puid:
+        type: int
+        required: false
+        default: 1000
+        description:
+          - The user id to run the inside the readarr container
+      readarr_pgid:
+        type: int
+        required: false
+        default: 1000
+        description:
+          - The group id to run the inside the readarr container
       readarr_timezone:
         type: str
         required: false
